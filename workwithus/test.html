@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .filter-section {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        select {
+            margin: 0 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .count-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Work with us</h1>
+
+<div class="count-section">
+    <p>Tổng số lượng công việc: <span id="totalCount"></span></p>
+    <p>Số lượng công việc sau khi lọc: <span id="filteredCount"></span></p>
+</div>
+
+<div class="filter-section">
+    <select id="jobCategory" onchange="filterJobs()">
+        <option value="">Chọn Nghề</option>
+        <option value="Art">Art</option>
+        <option value="Accounting">Accounting</option>
+        <option value="Esports">Esports</option>
+        <option value="Information Technology">Information Technology</option>
+    </select>
+
+    <select id="productionTeam" onchange="filterJobs()">
+        <option value="">Chọn Đội Sản Xuất</option>
+        <option value="Riot Discovery">Riot Discovery</option>
+        <option value="Riot Operations & Support">Riot Operations & Support</option>
+        <option value="VALORANT">VALORANT</option>
+    </select>
+
+    <select id="officeLocation" onchange="filterJobs()">
+        <option value="">Chọn Văn Phòng</option>
+        <option value="Los Angeles, USA">Los Angeles, USA</option>
+        <option value="Dublin, Ireland">Dublin, Ireland</option>
+        <option value="Singapore">Singapore</option>
+        <option value="Shanghai, China">Shanghai, China</option>
+    </select>
+</div>
+
+<table id="jobTable">
+    <thead>
+        <tr>
+            <th>Job Title</th>
+            <th>Category</th>
+            <th>Production Team</th>
+            <th>Office Location</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Principal 3D Character Artist</td>
+            <td>Art</td>
+            <td>Riot Discovery</td>
+            <td>Los Angeles, USA</td>
+        </tr>
+        <tr>
+            <td>A/P Representative (6 Month Contract)</td>
+            <td>Accounting</td>
+            <td>Riot Operations & Support</td>
+            <td>Dublin, Ireland</td>
+        </tr>
+        <tr>
+            <td>APAC Media Asset Manager (Contract)</td>
+            <td>Esports</td>
+            <td>Esports</td>
+            <td>Singapore</td>
+        </tr>
+        <tr>
+            <td>Animation Artist (Contractor)</td>
+            <td>Art</td>
+            <td>Riot Discovery</td>
+            <td>Shanghai, China</td>
+        </tr>
+        <tr>
+            <td>Application Engineer III</td>
+            <td>Information Technology</td>
+            <td>Riot Operations & Support</td>
+            <td>Los Angeles, USA</td>
+        </tr>
+        <tr>
+            <td>Art Outsourcing II (Illustration) - VALORANT</td>
+            <td>Art</td>
+            <td>VALORANT</td>
+            <td>Los Angeles, USA</td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Đếm số lượng công việc ban đầu
+        const totalCount = document.getElementById('totalCount');
+        const filteredCount = document.getElementById('filteredCount');
+        
+        const table = document.getElementById('jobTable');
+        const rows = table.getElementsByTagName('tr');
+        
+        // Tổng số công việc (trừ dòng tiêu đề)
+        totalCount.textContent = rows.length - 1;
+
+        // Đặt số lượng công việc sau khi lọc bằng số lượng tổng lúc đầu
+        filteredCount.textContent = rows.length - 1;
+
+    });
+
+    function filterJobs() {
+        const jobCategory = document.getElementById('jobCategory').value.toLowerCase();
+        const productionTeam = document.getElementById('productionTeam').value.toLowerCase();
+        const officeLocation = document.getElementById('officeLocation').value.toLowerCase();
+
+        const table = document.getElementById('jobTable');
+        const rows = table.getElementsByTagName('tr');
+
+        let visibleCount = 0;
+
+        // Lặp qua tất cả các dòng (trừ tiêu đề)
+        for (let i = 1; i < rows.length; i++) {
+            const category = rows[i].getElementsByTagName('td')[1].textContent.toLowerCase();
+            const team = rows[i].getElementsByTagName('td')[2].textContent.toLowerCase();
+            const location = rows[i].getElementsByTagName('td')[3].textContent.toLowerCase();
+
+            if ((jobCategory === '' || category === jobCategory) &&
+                (productionTeam === '' || team === productionTeam) &&
+                (officeLocation === '' || location === officeLocation)) {
+                rows[i].style.display = '';
+                visibleCount++;
+            } else {
+                rows[i].style.display = 'none';
+            }
+        }
+
+        // Cập nhật số lượng công việc sau khi lọc
+        document.getElementById('filteredCount').textContent = visibleCount;
+    }
+</script>
+
+</body>
+</html>
