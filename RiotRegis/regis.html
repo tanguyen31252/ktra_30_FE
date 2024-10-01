@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riot Games Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("regisimage/23.jpg");
+            /* Đường dẫn tới ảnh nội bộ */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: rgba(28, 43, 58, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #f04848;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #d03030;
+        }
+
+        .alternative-login {
+            margin-top: 20px;
+        }
+
+        .alternative-login button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            display: block;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .google-btn {
+            background-color: #eeeeee;
+            /* Màu Google */
+            display: block;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .facebook-btn {
+            background-color: #3b5998;
+            /* Màu Facebook */
+            display: block;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .twitter-btn {
+            background-color: #06121a;
+            /* Màu Twitter */
+            display: block;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .alternative-login button img {
+            margin-right: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .login-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Login to Riot Games</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Các nút đăng nhập thay thế -->
+        <div class="alternative-login">
+            <p>Or login with:</p>
+            <button class="google-btn">
+                <img src="regisimage/gg1.png" alt="Google" width="20"> Login with Google
+            </button>
+            <button class="facebook-btn">
+                <img src="regisimage/facebook-129.png" alt="Facebook" width="20"> Login with Facebook
+            </button>
+            <button class="twitter-btn">
+                <img src="regisimage\twitter-new-logo-twitter-icons-new-twitter-logo-x-2023-x-social-media-icon-free-png.png"
+                    alt="Twitter" width="20"> Login with Twitter
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Xử lý logic đăng nhập truyền thống
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'admin' && password === 'admin') {
+                alert('Đăng nhập thành công!');
+                window.location.href = 'https://www.example.com'; //chỗ này để chuyển hướng tới trang chủ ********************************************
+            } else {
+                alert('Tên người dùng hoặc mật khẩu không hợp lệ');
+            }
+        });
+
+        // Xử lý đăng nhập bằng Google, Facebook, Twitter
+        document.querySelector('.google-btn').addEventListener('click', function () {
+            alert('Đang chuyển hướng tới Google...');
+            window.location.href = 'https://google.com/login'; // Chuyển hướng đến API Google
+        });
+
+        document.querySelector('.facebook-btn').addEventListener('click', function () {
+            alert('Đang chuyển hướng tới Facebook...');
+            window.location.href = 'https://facebook.com/login'; // Chuyển hướng đến API Facebook
+        });
+
+        document.querySelector('.twitter-btn').addEventListener('click', function () {
+            alert('Đang chuyển hướng tới X...');
+            window.location.href = 'https://twitter.com/login'; // Chuyển hướng đến API Twitter
+        });
+    </script>
+</body>
+
+</html>
