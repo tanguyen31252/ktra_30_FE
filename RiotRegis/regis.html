@@ -9,7 +9,6 @@
         body {
             font-family: Arial, sans-serif;
             background-image: url("regisimage/23.jpg");
-            /* Đường dẫn tới ảnh nội bộ */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -26,7 +25,10 @@
             background-color: rgba(28, 43, 58, 0.9);
             padding: 20px;
             border-radius: 10px;
-            width: 300px;
+            width: 90%;
+            /* Đặt chiều rộng là 90% */
+            max-width: 400px;
+            /* Đặt chiều rộng tối đa */
             text-align: center;
         }
 
@@ -40,12 +42,16 @@
 
         button {
             width: 100%;
-            padding: 10px;
+            /* Chiều rộng đầy đủ */
+            padding: 12px;
+            /* Tăng kích thước padding */
             background-color: #f04848;
             border: none;
             border-radius: 5px;
             color: white;
             cursor: pointer;
+            font-size: 16px;
+            /* Tăng kích thước font */
         }
 
         button:hover {
@@ -58,48 +64,71 @@
 
         .alternative-login button {
             width: 100%;
-            padding: 10px;
+            /* Chiều rộng đầy đủ */
+            padding: 12px;
+            /* Tăng kích thước padding */
             margin: 5px 0;
-            display: block;
+            display: flex;
+            /* Sử dụng flex để căn giữa */
             align-items: center;
             justify-content: center;
             border: none;
             border-radius: 5px;
             color: white;
             cursor: pointer;
+            font-size: 16px;
+            /* Tăng kích thước font */
         }
 
         .google-btn {
             background-color: #eeeeee;
-            /* Màu Google */
-            display: block;
-            align-items: center;
-            justify-content: center;
         }
 
         .facebook-btn {
             background-color: #3b5998;
-            /* Màu Facebook */
-            display: block;
-            align-items: center;
-            justify-content: center;
         }
 
         .twitter-btn {
             background-color: #06121a;
-            /* Màu Twitter */
-            display: block;
-            align-items: center;
-            justify-content: center;
         }
 
+        /* Responsive cho hình ảnh */
         .alternative-login button img {
             margin-right: 10px;
+            width: 20px;
+        }
+
+
+        .terms-container {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: white;
+            font-size: 12px;
+        }
+
+        .terms-container a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .terms-container a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 600px) {
             .login-container {
-                width: 90%;
+                width: 95%;
+                /* Tăng chiều rộng cho các thiết bị nhỏ hơn */
+            }
+
+            button {
+                padding: 10px;
+                /* Giảm kích thước padding cho các thiết bị nhỏ */
+            }
+
+            button:hover {
+                background-color: #d03030;
             }
         }
     </style>
@@ -107,46 +136,61 @@
 
 <body>
     <div class="login-container">
-        <h2>Login to Riot Games</h2>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">Login</button>
+        <h2>Đăng nhập Riot Games</h2>
+        <form id="loginForm" onsubmit="login(event)">
+            <label for="username">Tên đăng nhập</label><br>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Mật khẩu</label><br>
+            <input type="password" id="password" name="password"><br><br>
+            <button type="submit">Đăng nhập</button>
         </form>
 
-        <!-- Các nút đăng nhập thay thế -->
         <div class="alternative-login">
             <p>Or login with:</p>
-            <button class="google-btn">
-                <img src="regisimage/gg1.png" alt="Google" width="20"> Login with Google
+            <button class="google-btn"
+                onclick="alert('Đang chuyển hướng tới Google...'); window.location.href = 'https://google.com/login';">
+                <img src="regisimage/gg1.png" alt="Google"> Đăng nhập Google
             </button>
-            <button class="facebook-btn">
-                <img src="regisimage/facebook-129.png" alt="Facebook" width="20"> Login with Facebook
+            <button class="facebook-btn" onclick="facebookLogin()">
+                <img src="regisimage/facebook-129.png" alt="Facebook"> Đăng nhập Facebook
             </button>
-            <button class="twitter-btn">
-                <img src="regisimage\twitter-new-logo-twitter-icons-new-twitter-logo-x-2023-x-social-media-icon-free-png.png"
-                    alt="Twitter" width="20"> Login with Twitter
+            <button class="twitter-btn"
+                onclick="alert('Đang chuyển hướng tới X...'); window.location.href = 'https://twitter.com/login';">
+                <img src="regisimage/twitter-new-logo-twitter-icons-new-twitter-logo-x-2023-x-social-media-icon-free-png.png"
+                    alt="Twitter"> Đăng nhập X
             </button>
+        </div>
+        <div class="terms-container">
+            <p><a href="https://www.hcaptcha.com/terms">Điều khoản sử dụng</a>
+                |
+                <a href="https://www.hcaptcha.com/privacy">Chính sách bảo mật</a>
+            </p>
         </div>
     </div>
 
     <script>
-        // Xử lý logic đăng nhập truyền thống
-        document.getElementById('loginForm').addEventListener('submit', function (event) {
+        // Đăng nhập
+        function login(event) {
+            //  chặn hành động mặc định của form
             event.preventDefault();
 
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+            // Lấy giá trị từ các ô nhập liệu
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
 
-            if (username === 'admin' && password === 'admin') {
-                alert('Đăng nhập thành công!');
-                window.location.href = 'https://www.example.com'; //chỗ này để chuyển hướng tới trang chủ ********************************************
+            // Kiểm tra thông tin đăng nhập
+            if (username === "admin" && password === "admin") {
+                // Chuyển hướng tới trang nội bộ
+                alert("Đăng nhập thành công!");
+                window.location.href = "../Trang_chu/index.html";
             } else {
-                alert('Tên người dùng hoặc mật khẩu không hợp lệ');
+                // Hiển thị thông báo lỗi nếu sai tên đăng nhập hoặc mật khẩu
+                alert("Sai tên đăng nhập hoặc mật khẩu!");
+                window.location.href = "../RiotRegis/regis.html";
             }
-        });
+        }
 
-        // Xử lý đăng nhập bằng Google, Facebook, Twitter
+        // Đăng nhập bằng Google, Facebook, Twitter
         document.querySelector('.google-btn').addEventListener('click', function () {
             alert('Đang chuyển hướng tới Google...');
             window.location.href = 'https://google.com/login'; // Chuyển hướng đến API Google
@@ -162,6 +206,7 @@
             window.location.href = 'https://twitter.com/login'; // Chuyển hướng đến API Twitter
         });
     </script>
+
 </body>
 
 </html>
