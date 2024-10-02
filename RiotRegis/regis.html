@@ -147,7 +147,7 @@
         </form>
 
         <div class="alternative-login">
-            <p>Or login with:</p>
+            <p>Hoặc đăng nhập bằng</p>
             <button class="google-btn"
                 onclick="alert('Đang chuyển hướng tới Google...'); window.location.href = 'https://google.com/login';">
                 <img src="regisimage/gg1.png" alt="Google"> Đăng nhập Google
@@ -180,7 +180,7 @@
             const password = document.getElementById("password").value;
 
             // Kiểm tra thông tin đăng nhập
-            if (username === "admin" && password === "admin") {
+            if (username == "admin" && password == "admin") {
                 // Chuyển hướng tới trang nội bộ
                 alert("Đăng nhập thành công!");
                 window.location.href = "../Trang_chu/index.html";
