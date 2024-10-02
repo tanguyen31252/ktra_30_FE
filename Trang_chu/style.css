@@ -1,0 +1,252 @@
+/* Reset and General Styles */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: Arial, sans-serif;
+   line-height: 1.6;
+   color: #333;
+}
+
+/* Header */
+header {
+   background-color: #000;
+   color: #fff;
+   padding: 15px 0;
+}
+
+.logo {
+   width: 50px;
+   height: auto;
+   margin-right: 10px; 
+}
+
+.logo2 {
+   width: 30px; 
+   height: auto; 
+   margin-right: 10px; 
+}
+
+.navbar {
+   display: flex;
+   justify-content: space-between;
+   max-width: 1200px;
+   margin: auto;
+}
+
+.left a, .right a {
+   color: #fff;
+   margin-right: 20px;
+   text-decoration: none;
+   font-size: 16px;
+}
+
+.left a:hover, .right a:hover {
+   color: #ff4655;
+}
+
+.what-happening {
+   background-image: url('image/Riot-Case-Study-Hero-Image-Desktop.jpg');
+   background-color: #f4f4f4;
+   background-size: cover;
+   background-position: center;
+   padding: 100px 0;
+   text-align: center;
+}
+
+.what-happening h1 {
+   font-size: 48px;
+   margin-bottom: 20px;
+   color: white; 
+}
+
+.what-happening p {
+   font-size: 20px;
+   margin-bottom: 30px;
+   color: white; 
+}
+
+.cta-btn {
+   background-color: #ff4655;
+   color: #fff;
+   padding: 12px 24px;
+   text-decoration: none;
+   border-radius: 30px;
+}
+
+/* Our Games Section */
+.our-games {
+   background-color: #000000dd;
+   padding: 50px 0;
+   text-align: left;
+   color: white;
+   text-align: center;
+}
+
+.our-games h2 {
+   padding: 50px;
+   font-size: 36px;
+   margin-bottom: 30px;
+   color: white;
+   text-align: left;
+}
+
+.game-item h3 {
+   margin-top: 20px;
+   font-size: 22px;
+   color: white;
+}
+
+.games-grid {
+   display: flex;         
+   justify-content: space-between; 
+   align-items: center;     
+   max-width: 100%;          
+   padding: 0 20px;           
+}
+
+.game-item {
+   flex: 1;                  
+   margin: 0 10px;            
+}
+
+.game-item img {
+   width: 100%;               
+   max-width: 500px;      
+   height: auto;
+   border-radius: 10px;
+}
+
+/* Esports Section */
+.esports {
+   padding: 50px;
+   background-color: #000000dd;
+   text-align: left;
+   color: white;
+}
+
+.esports h2 {
+   font-size: 36px;
+}
+
+.esports p {
+   margin: 20px 0;
+}
+
+.esports-grid {
+   display: flex;
+   justify-content: space-around;
+}
+
+.image-item img {
+   width: 90%;
+   border-radius: 10px;
+}
+
+/* Entertainment Section */
+.entertainment {
+   padding: 50px;
+   background-color: #000000dd;
+   text-align: left;
+   color: white;
+}
+
+.entertainment h2 {
+   font-size: 36px;
+}
+
+.entertainment-grid {
+   display: flex;
+   justify-content: space-around;
+}
+
+/* Riot Forge Section */
+.riot-forge {
+   padding: 50px;
+   background-color: #000000dd;
+   text-align: left;
+   color: white;
+}
+
+.riot-forge h2 {
+   font-size: 36px;
+}
+
+.riot-forge-grid {
+   display: flex;
+   justify-content: space-around;
+}
+
+.image-item img {
+   width: 90%;
+   border-radius: 10px;
+}
+
+/* Careers Section */
+.careers {
+   padding: 50px;
+   background-color: #e0e0e0;
+   text-align: center;
+}
+
+.careers h2 {
+   font-size: 36px;
+}
+
+/* Footer Section */
+footer {
+   background-color: #000;
+   color: #fff;
+   padding: 20px 0;
+   text-align: center;
+}
+
+footer ul {
+   list-style: none;
+   display: flex;
+   justify-content: center;
+   gap: 30px;
+   margin-top: 10px;
+}
+
+footer ul li a {
+   color: #fff;
+   text-decoration: none;
+}
+
+/* For large screens (desktops) */
+@media (min-width: 1200px) {
+   .games-grid, .esports-grid, .entertainment-grid, .riot-forge-grid {
+     flex-direction: row;
+     justify-content: space-between;
+   }
+}
+
+/* For medium screens (tablets) */
+@media (max-width: 1200px) and (min-width: 768px) {
+   .games-grid, .esports-grid, .entertainment-grid, .riot-forge-grid {
+     flex-direction: row;
+     justify-content: center;
+     flex-wrap: wrap;  
+   }
+   .game-item, .image-item {
+     flex-basis: 45%;
+     margin-bottom: 20px;  
+   }
+}
+
+/* For mobile screens (phones and small devices) */
+@media (max-width: 768px) {
+   .games-grid, .esports-grid, .entertainment-grid, .riot-forge-grid {
+     flex-direction: column;
+     align-items: center;
+   }
+   .game-item, .image-item {
+     width: 100%; 
+     margin-bottom: 20px;
+   }
+}
+ 
