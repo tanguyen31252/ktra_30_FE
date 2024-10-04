@@ -2,86 +2,79 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
+    box-sizing: border-box;}
 /* Body và Font */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-}
-
+    color: #333;}
 /* Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #111;
-}
-
+    background-color: #111;}
 .logo img {
-    height: 40px;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.right-section {
-    display: flex;
-    align-items: center;
-}
+    height: 40px;}
+/*Nut dang nhap*/
 
 .right-section img {
     height: 20px;
-    margin-right: 10px;
-}
-
-.right-section a {
+    margin-right: 10px;}
+.right-section {
+    display: flex;
+    align-items: center;
     color: white;
     background-color: red;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
 }
-
-/* Mobile Styles */
-.mobile-menu {
-    display: none;
-}
-#mobile-menu-list {
-    display: none;/* Ẩn menu theo mặc định */
-    list-style: none;
-    padding-left: 0;
-    background-color: #5d5d5d;
-    position: fixed; /* Định vị cố định bên ngoài header */
-    top: 67px; /* Đặt menu dưới header */
-    left: 0;
-    text-align: center;
-    width:100%; /* Chiếm toàn bộ chiều ngang của trang */
-    z-index: 1000; /* Đảm bảo menu hiển thị phía trên các phần tử khác */
-}
-
-#mobile-menu-list li {
-    margin: 10px 0;
-}
-
-#mobile-menu-list li a {
+/*Destop-Menu*/
+.desktop-menu{
+    background-color: #111;
+        padding: 10px;}
+.dropbtn {
+    background-color: #111;
     color: white;
-    text-decoration: none;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
+.arrow-down::after {
+    content: "▼";
+    margin-left: 10px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #111;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-top: 4px solid red;}
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    background-color: #303030;
+}
+
 /* Hero Section */
 .hero {
     background: url('Anh/hero-background.jpg') no-repeat center center/cover;
@@ -258,57 +251,27 @@ footer {
 }
 
 /* Responsive Styles */
-/* Hiển thị nút menu và danh sách khi ở chế độ mobile */
+
 @media (max-width: 992px) {
-    nav.desktop-menu {
-        display: none;
-    }
-
-    .mobile-menu {
-        display: block;
-    }
-
-    #menu-toggle {
-        font-size: 24px;
-        background: none;
-        border: none;
-        color: white;
-        cursor: pointer;
-    }
-
-    .right-section a {
-        padding: 5px 10px;
-        font-size: 14px;
-    }
-}
-@media (max-width: 992px) {
-    .navbar {
-        flex-direction: column;
-    }
+    .logo{display: none;}
+    .navbar {flex-direction: column;}
 
     nav ul {
         flex-direction:unset;
-        align-items:flex-end;
-    }
-
+        align-items:flex-end;}
     nav ul li {
-        margin: 10px 0;
-    }
-
+        margin: 10px 0;}
     .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
+        font-size: 2.5rem;}
     .offices h2 {
-        font-size: 2rem;
-    }
-
+        font-size: 2rem;}
     .office img {
-        height: 200px;
-    }
+        height: 200px;}
 }
 
 @media (max-width: 768px) {
+    .dropbtn{padding: 12px;
+        font-size: 12px;}
     .hero {
         height: 50vh;
     }
