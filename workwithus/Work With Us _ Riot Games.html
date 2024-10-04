@@ -1,284 +1,234 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Work with Us | Riot Games</title>
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <header>
-      <div class="left-section">
-        <img src="img/logo.png" alt="Riot Games" />
-        <a href="https://www.riotgames.com/vi" target="_blank">
-          <img
-            src="img/logo2.png"
-            alt="Riot Games"
-            style="margin-top: 4px; margin-left: 10px"
-          />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work with Us | Riot Games</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <header>
+    <div class="left-section">
+      <img src="img/logo.png" alt="Riot Games" />
+      <a href="https://www.riotgames.com/vi" target="_blank">
+        <img src="img/logo2.png" alt="Riot Games" style="margin-top: 4px; margin-left: 10px" />
+      </a>
+    </div>
+    <div class="center-section">
+      <a class="center-section-item" href="#">CHÚNG TÔI LÀ AI</a>
+      <a class="center-section-item" href="#">LÀM VIỆC CÙNG CHÚNG TÔI</a>
+      <a class="center-section-item" href="https://www.riotgames.com/vi/news">TIN TỨC</a>
+    </div>
+    <div class="right-section">
+      <input type="text" placeholder="KẾT QUẢ" />
+      <button>ĐĂNG NHẬP</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="video-background">
+      <!-- Video nguồn mở từ URL -->
+      <video autoplay muted loop preload="auto">
+        <source src="img/fullscreen/nnp-for-rgcom-v3.mp4" type="video/mp4" />
+      </video>
+
+      <div class="content-video">
+        <h1>UNLEASH PLAY</h1>
+        <a href="">Work with us</a>
+      </div>
+    </div>
+    <div class="img-background">
+      <img src="img/fullscreen/static-frame.jpg" alt="static-frame" srcset="">
+
+      <div class="content-video">
+        <h1>UNLEASH PLAY</h1>
+        <a href="">Work with us</a>
+      </div>
+    </div>
+    <div class="content">
+      <div class="body-content">
+        <h1>
+          Team up with us to forge your path and craft unforgettable experiences for players
+        </h1>
+      </div>
+
+      <div class="cards">
+        <a class="card" href="https://www.riotgames.com/vi/work-with-us/life-at-riot">
+          <img src="img/fullscreen/life at riot.jpg" alt="Life at Riot" />
+          <h3>Life at Riot</h3>
+          <span>Learn more</span>
+        </a>
+        <a class="card" href="#">
+          <img src="img/fullscreen/remote interviewing.jpeg" alt="Remote Interviewing" />
+          <h3>Remote Interviewing</h3>
+          <span>Learn more</span>
+        </a>
+        <a class="card" href="#">
+          <img src="img/fullscreen/office.jpg" alt="Offices" />
+          <h3>Offices</h3>
+          <span>Learn more</span>
+        </a>
+        <a class="card" href="#">
+          <img src="img/fullscreen/social impact.png" alt="Social Impact" />
+          <h3>Social Impact</h3>
+          <span>Learn more</span>
         </a>
       </div>
-      <div class="center-section">
-        <a class="center-section-item" href="#">CHÚNG TÔI LÀ AI</a>
-        <a class="center-section-item" href="#">LÀM VIỆC CÙNG CHÚNG TÔI</a>
-        <a class="center-section-item" href="https://www.riotgames.com/vi/news"
-          >TIN TỨC</a
-        >
+      <div class="card-cover" style="margin: 30px; padding: 30px">
+        <a class="card" href="https://www.riotgames.com/vi/university-programs">
+          <img src="img/fullscreen/card_cover.jpg" alt="University Programs" />
+          <h3>University Programs</h3>
+          <span>Learn more</span>
+        </a>
       </div>
-      <div class="right-section">
-        <input type="text" placeholder="KẾT QUẢ" />
-        <button>ĐĂNG NHẬP</button>
+    </div>
+    <div class="job-list">
+      <h1>Work with us</h1>
+      <p>Các vị trí trống: <span id="filteredCount"></span></p>
+
+      <div class="filter-section">
+        <select id="jobCategory" onchange="filterJobs()">
+          <option value="">Chọn Nghề</option>
+          <option value="Art">Art</option>
+          <option value="Accounting">Accounting</option>
+          <option value="Esports">Esports</option>
+          <option value="Information Technology">
+            Information Technology
+          </option>
+        </select>
+
+        <select id="productionTeam" onchange="filterJobs()">
+          <option value="">Chọn Đội Sản Xuất</option>
+          <option value="Riot Discovery">Riot Discovery</option>
+          <option value="Riot Operations & Support">
+            Riot Operations & Support
+          </option>
+          <option value="VALORANT">VALORANT</option>
+        </select>
+
+        <select id="officeLocation" onchange="filterJobs()">
+          <option value="">Chọn Văn Phòng</option>
+          <option value="Los Angeles, USA">Los Angeles, USA</option>
+          <option value="Dublin, Ireland">Dublin, Ireland</option>
+          <option value="Singapore">Singapore</option>
+          <option value="Shanghai, China">Shanghai, China</option>
+        </select>
       </div>
-    </header>
 
-    <main>
-      <div class="video-background">
-        <!-- Video nguồn mở từ URL -->
-        <video autoplay muted loop>
-          <source
-            src="https://www.riotgames.com/darkroom/original/8a4aa4f7fcd70601d93e5ff0d7f12b0d:1b4eea445bc042f5be0de9824451ffee/nnp-for-rgcom-v3.mp4"
-            type="video/webm"
-          />
-        </video>
-
-        <div class="content-video">
-          <h1>UNLEASH PLAY</h1>
-          <a href="">Work with us</a>
-        </div>
-      </div>
-      <div class="content">
-        <div class="body-content">
-          <h1>
-            Team up with us to forge your path and craft unforgettable
-            experiences for players
-          </h1>
-        </div>
-
-        <div class="cards">
-          <a
-            class="card"
-            href="https://www.riotgames.com/vi/work-with-us/life-at-riot"
-          >
-            <img src="img/fullscreen/life at riot.jpg" alt="Life at Riot" />
-            <h3>Life at Riot</h3>
-            <span>Learn more</span>
+      <table id="jobTable">
+        <thead>
+          <tr>
+            <th>Job Title</th>
+            <th>Category</th>
+            <th>Production Team</th>
+            <th>Office Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Principal 3D Character Artist</td>
+            <td>Art</td>
+            <td>Riot Discovery</td>
+            <td>Los Angeles, USA</td>
+          </tr>
+          <tr>
+            <td>A/P Representative (6 Month Contract)</td>
+            <td>Accounting</td>
+            <td>Riot Operations & Support</td>
+            <td>Dublin, Ireland</td>
+          </tr>
+          <tr>
+            <td>APAC Media Asset Manager (Contract)</td>
+            <td>Esports</td>
+            <td>Esports</td>
+            <td>Singapore</td>
+          </tr>
+          <tr>
+            <td>Animation Artist (Contractor)</td>
+            <td>Art</td>
+            <td>Riot Discovery</td>
+            <td>Shanghai, China</td>
+          </tr>
+          <tr>
+            <td>Application Engineer III</td>
+            <td>Information Technology</td>
+            <td>Riot Operations & Support</td>
+            <td>Los Angeles, USA</td>
+          </tr>
+          <tr>
+            <td>Art Outsourcing II (Illustration) - VALORANT</td>
+            <td>Art</td>
+            <td>VALORANT</td>
+            <td>Los Angeles, USA</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <footer>
+    <div class="footer__row">
+      <div class="footer__col">
+        <div class="footer__col-inner">
+          <a class="footer__logo" href="https://www.riotgames.com/vi">
+            <img src="img/logo2.png" alt="Riot Games" />
           </a>
-          <a class="card" href="#">
-            <img
-              src="img/fullscreen/remote interviewing.jpeg"
-              alt="Remote Interviewing"
-            />
-            <h3>Remote Interviewing</h3>
-            <span>Learn more</span>
-          </a>
-          <a class="card" href="#">
-            <img src="img/fullscreen/office.jpg" alt="Offices" />
-            <h3>Offices</h3>
-            <span>Learn more</span>
-          </a>
-          <a class="card" href="#">
-            <img src="img/fullscreen/social impact.png" alt="Social Impact" />
-            <h3>Social Impact</h3>
-            <span>Learn more</span>
-          </a>
-        </div>
-        <div class="card-cover" style="margin: 30px; padding: 30px">
-          <a
-            class="card"
-            href="https://www.riotgames.com/vi/university-programs"
-          >
-            <img
-              src="img/fullscreen/card_cover.jpg"
-              alt="University Programs"
-            />
-            <h3>University Programs</h3>
-            <span>Learn more</span>
-          </a>
-        </div>
-      </div>
-      <div class="job-list">
-        <h1>Work with us</h1>
-        <p>Các vị trí trống: <span id="filteredCount"></span></p>
-
-        <div class="filter-section">
-          <select id="jobCategory" onchange="filterJobs()">
-            <option value="">Chọn Nghề</option>
-            <option value="Art">Art</option>
-            <option value="Accounting">Accounting</option>
-            <option value="Esports">Esports</option>
-            <option value="Information Technology">
-              Information Technology
-            </option>
-          </select>
-
-          <select id="productionTeam" onchange="filterJobs()">
-            <option value="">Chọn Đội Sản Xuất</option>
-            <option value="Riot Discovery">Riot Discovery</option>
-            <option value="Riot Operations & Support">
-              Riot Operations & Support
-            </option>
-            <option value="VALORANT">VALORANT</option>
-          </select>
-
-          <select id="officeLocation" onchange="filterJobs()">
-            <option value="">Chọn Văn Phòng</option>
-            <option value="Los Angeles, USA">Los Angeles, USA</option>
-            <option value="Dublin, Ireland">Dublin, Ireland</option>
-            <option value="Singapore">Singapore</option>
-            <option value="Shanghai, China">Shanghai, China</option>
-          </select>
-        </div>
-
-        <table id="jobTable">
-          <thead>
-            <tr>
-              <th>Job Title</th>
-              <th>Category</th>
-              <th>Production Team</th>
-              <th>Office Location</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Principal 3D Character Artist</td>
-              <td>Art</td>
-              <td>Riot Discovery</td>
-              <td>Los Angeles, USA</td>
-            </tr>
-            <tr>
-              <td>A/P Representative (6 Month Contract)</td>
-              <td>Accounting</td>
-              <td>Riot Operations & Support</td>
-              <td>Dublin, Ireland</td>
-            </tr>
-            <tr>
-              <td>APAC Media Asset Manager (Contract)</td>
-              <td>Esports</td>
-              <td>Esports</td>
-              <td>Singapore</td>
-            </tr>
-            <tr>
-              <td>Animation Artist (Contractor)</td>
-              <td>Art</td>
-              <td>Riot Discovery</td>
-              <td>Shanghai, China</td>
-            </tr>
-            <tr>
-              <td>Application Engineer III</td>
-              <td>Information Technology</td>
-              <td>Riot Operations & Support</td>
-              <td>Los Angeles, USA</td>
-            </tr>
-            <tr>
-              <td>Art Outsourcing II (Illustration) - VALORANT</td>
-              <td>Art</td>
-              <td>VALORANT</td>
-              <td>Los Angeles, USA</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </main>
-    <footer>
-      <div class="footer__row">
-        <div class="footer__col">
-          <div class="footer__col-inner">
-            <a class="footer__logo" href="https://www.riotgames.com/vi">
-              <img src="img/logo2.png" alt="Riot Games" />
-            </a>
-            <div class="footer__navigation">
-              <nav>
-                <ul class="list--unstyled">
-                  <li>
-                    <a
-                      href="https://www.riotgames.com/vi/press"
-                      class=""
-                      data-item="Báo Chí"
-                      >Báo Chí</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.riotgames.com/vi/security"
-                      class=""
-                      data-item="Bảo Mật"
-                      >Bảo Mật</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.riotgames.com/vi/legal"
-                      class=""
-                      data-item="Pháp Lý"
-                      >Pháp Lý</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.riotgames.com/vi/terms-of-service"
-                      class=""
-                      data-item="Điều Khoản Sử Dụng"
-                      >Điều Khoản Sử Dụng</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.riotgames.com/vi/privacy-notice"
-                      class=""
-                      data-item="Chính Sách Quyền Riêng Tư"
-                      >Chính Sách Quyền Riêng Tư</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://support.riotgames.com/hc/vi"
-                      class=""
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-item="Hỗ Trợ Người Chơi"
-                      >Hỗ Trợ Người Chơi</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.riotgames.com/vi/e-verify-right-to-work"
-                      class=""
-                      data-item="Xác Minh Điện Tử"
-                      >Xác Minh Điện Tử</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.riotgames.com//vi/accessibility"
-                      class=""
-                      data-item="Khả năng tiếp cận"
-                      >Khả năng tiếp cận</a
-                    >
-                  </li>
-                </ul>
-              </nav>
-            </div>
+          <div class="footer__navigation">
+            <nav>
+              <ul class="list--unstyled">
+                <li>
+                  <a href="https://www.riotgames.com/vi/press" class="" data-item="Báo Chí">Báo Chí</a>
+                </li>
+                <li>
+                  <a href="https://www.riotgames.com/vi/security" class="" data-item="Bảo Mật">Bảo Mật</a>
+                </li>
+                <li>
+                  <a href="https://www.riotgames.com/vi/legal" class="" data-item="Pháp Lý">Pháp Lý</a>
+                </li>
+                <li>
+                  <a href="https://www.riotgames.com/vi/terms-of-service" class="" data-item="Điều Khoản Sử Dụng">Điều
+                    Khoản Sử Dụng</a>
+                </li>
+                <li>
+                  <a href="https://www.riotgames.com/vi/privacy-notice" class=""
+                    data-item="Chính Sách Quyền Riêng Tư">Chính Sách Quyền Riêng Tư</a>
+                </li>
+                <li>
+                  <a href="https://support.riotgames.com/hc/vi" class="" target="_blank" rel="noopener noreferrer"
+                    data-item="Hỗ Trợ Người Chơi">Hỗ Trợ Người Chơi</a>
+                </li>
+                <li>
+                  <a href="https://www.riotgames.com/vi/e-verify-right-to-work" class=""
+                    data-item="Xác Minh Điện Tử">Xác Minh Điện Tử</a>
+                </li>
+                <li>
+                  <a href="https://www.riotgames.com//vi/accessibility" class="" data-item="Khả năng tiếp cận">Khả năng
+                    tiếp cận</a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
-      <div class="footer__row">
-        <div class="footer__col">
-          <div class="footer__cookie">
-            <button class="js-cookie-preference-trigger">
-              Tùy Chọn Cookie
-            </button>
-          </div>
-          <small class="footer__small"
-            >© năm 2024 bởi Riot Games, Inc. Đã đăng ký bản quyền.</small
-          >
+    </div>
+    <div class="footer__row">
+      <div class="footer__col">
+        <div class="footer__cookie">
+          <button class="js-cookie-preference-trigger">
+            Tùy Chọn Cookie
+          </button>
         </div>
-        <div class="footer__col">
-          <div class="footer__top-link">
-            <a href="#top">Tới đầu trang </a>
-          </div>
+        <small class="footer__small">© năm 2024 bởi Riot Games, Inc. Đã đăng ký bản quyền.</small>
+      </div>
+      <div class="footer__col">
+        <div class="footer__top-link">
+          <a href="#top">Tới đầu trang </a>
         </div>
       </div>
-    </footer>
-  </body>
-  <script src="index.js"></script>
+    </div>
+  </footer>
+</body>
+<script src="index.js"></script>
+
 </html>
