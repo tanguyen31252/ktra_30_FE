@@ -1,4 +1,3 @@
-// mau.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const backToTopButton = document.getElementById('backToTop');
@@ -21,15 +20,4 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
         });
     });
-});
-
-document.getElementById("menu-toggle").addEventListener("click", function() {
-  var menu = document.getElementById("mobile-menu-list");
-  
-  // Toggle menu visibility
-  if (menu.style.display === "block") {
-    menu.style.display = "none";
-  } else {
-    menu.style.display = "block";
-  }
 });
