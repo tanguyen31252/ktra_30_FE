@@ -403,4 +403,14 @@ footer {
         text-align: center;
         margin: 50px;
     }
+    th, td {
+        font-size: 12px;
+        padding: 6px;
+      }
+      
+      /* Stack columns for small screens if necessary */
+      table {
+        display: block;
+        overflow: auto;
+      }
 }

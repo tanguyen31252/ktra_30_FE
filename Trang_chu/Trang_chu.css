@@ -157,7 +157,16 @@
    margin-top: 20px;
    font-size: 22px;
  }
+ .game-item a{
+  text-decoration: none;
+  color: white !important;
+ }
  
+ .what-happening a{
+  text-decoration: none;
+  color: white;
+ }
+
  .games-grid {
    display: flex;
    justify-content: space-between;
@@ -380,7 +389,15 @@
      flex-direction: column;
      align-items: center;
    }
- 
+ .content-video h1{
+   display: none !important
+  }
+  .big-text{
+    display: none !important;
+  }
+  .content-video p{
+    padding-top: 100px;
+  }
    .game-item,
    .image-item {
      width: 100%;
@@ -398,5 +415,11 @@
  
    .stats {
      flex-direction: column; /* Stack stats vertically */
+   }
+   .what-happening .images{
+    display: block;
+   }
+   .what-happening img{
+    width: 100%;
    }
  }
